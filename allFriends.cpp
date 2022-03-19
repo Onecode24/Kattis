@@ -21,16 +21,9 @@ int main(){
     while(itr!=friends.end()){
         if(itr->first>n){
             checkAllFriend(friends,itr->first);
-        }else if(itr->second>n){
-            checkAllFriend(friends,itr->second);
-
-        }
-
+        }else if(itr->second>n) checkAllFriend(friends,itr->second);
         itr++;
     }
-
-
-
     return 0;
 }
 

@@ -63,7 +63,6 @@ vector<vector<int>>  multiplication(vector<vector<int>> cases){
          }   
         }
     } 
-
     return cases;  
 }
 
