@@ -21,6 +21,7 @@ int main(){
         }else{
             //cout <<"Ollie wins."<<endl;
             output.push_back("Ollie wins.");
+            
 
         }
     }

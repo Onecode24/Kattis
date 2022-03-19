@@ -18,6 +18,7 @@ int main(){
     vector<string> all;
     srand(time(nullptr));
     cin >> str;
+    
     for(int i(0); i<str.length(); i++){
         letters.push_back(str[i]);
     }
