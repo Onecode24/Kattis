@@ -8,13 +8,11 @@ using namespace std;
 int getNumber(string tmp);
 
 int main(){
-
     string str,tmp;int n(0);
     cin >> str;
     for(int i(0); i<str.length(); i++){
-        if(str[i]!=';'){
-            tmp+=str[i];
-        }else if(str[i]==';' || i==str.length()-1){
+        if(str[i]!=';') tmp+=str[i];
+        else if(str[i]==';' || i==str.length()-1){
             n+=getNumber(tmp);
             tmp="";
         }     
@@ -32,9 +30,8 @@ int getNumber(string tmp){
             a=false;
         }
     }
-    if(a){
-        return 1;
-    }else{
+    if(a)return 1;
+    else{
         stringstream sstmp(tmp);
         int b,c;
         sstmp >> b>>c;
