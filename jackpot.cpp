@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
+#include <map>
 
 using namespace std;
 
@@ -19,24 +20,39 @@ int main(){
             cin >> a;
             periode.push_back(a);
         }
-
         i=getMax(periode);
 
-        while(true){
-            int s(0);
-            for(auto j : periode){
-                if(i%j==0) s++;
+        long long sum(1);
+        
+        for (auto j : periode){
+            sum*=j;
+        }
+        if (sum>(pow(10,9)))       
+        {
+            cout <<"More than a billion."<<endl;
+            return 0;
+        }else{
+            long long t(0);
+            for(long long l(sum); l>0; l-=i){
+                 int s(0);
+                for(auto k : periode){
+                    if(l%k==0) s++;
+                }
+                // if(s==periode.size()){
+                //     cout << l<<endl;
+                //     break;
+                // }
+                if(s==periode.size()){
+                    t=l;
+                }
             }
-            if(s==3){
-                cout << i<<endl;
-                break;
-            }
-            if(i>pow(10,9)){
-                cout <<"More than a billion."<<endl;
-                break;
-            }
-            i++;
-        }     
+             cout << t<<endl;
+
+
+        }
+        
+
+        
     }
     
 
