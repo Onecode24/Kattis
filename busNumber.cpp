@@ -14,8 +14,6 @@ int check_increment(vector<int> bus,int n){
     return n;
 }
 
-
-
 int main(){
 
     int n,a;
