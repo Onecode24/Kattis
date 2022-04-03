@@ -17,28 +17,18 @@ int main(){
         cin>>ti>>i;
         flux.push_back({i,ti});
     }
-    int exe(0);
-    n=flux[0].second;n=0;
+    int retard(1),exep(0);
     sort(flux.begin(),flux.end());
-    for(auto i=0; i<flux.size();i++){
-        if(flux[i].second<n){
-           exe+=(n-flux[i].second-1);
-           n+=flux[i].second+1;
+    int j(0);
+    for(auto i : flux){
+        if(i.second<=retard){
+            retard++;
+            //continue;
         }else{
-            n++;
+            exep+=i.second-retard;
+            retard=i.second+1;
         }
-        // if(flux[i].second>n){
-        //     res.push_back(flux[i].second+1);
-        //     n=flux[i].second;
-        // }else{
-        //     res.push_back(n+1);
-        // }
-        
     }
-    // for(int i(0); i<res.size(); i++){
-    //     cout <<res[i]<<" ";
-    // }
-    cout<<exe;
-
+    cout<<exep<<endl;
     return 0;
 }
